@@ -1,4 +1,4 @@
-#!/home/delhivery/PycharmProjects/bookstore/venv/bin/python
+#!/home/delhivery/PycharmProjects/Bookstore/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,0 +1,23 @@
+limit_req_zone $binary_remote_addr zone=bookstore:10m rate=2r/m;
+
+server {
+
+        listen 80;
+        server_name bookstore.live;
+
+        location / {
+             allow 85.110.71.70;
+             deny all;
+
+             limit_req zone=bookstore;
+             proxy_pass http://bookstore-lb/;
+        }
+}
+
+
+
+NOTE
+domain name = bookstore.live
+If we want rate limit for a specific endpoint, it should come before location /
+load balancer name is bookstore-lb
+85.110.71.70 -- IP address jo hme blck krna hey
